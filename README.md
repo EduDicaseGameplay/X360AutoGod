@@ -1,197 +1,73 @@
-🎮 X360 Auto GOD Tool
+# 🎮 **X360 Auto GOD Tool**
 
-O X360 Auto GOD Tool é uma ferramenta avançada desenvolvida para usuários de Xbox 360 com RGH/Exploit, criada para automatizar todo o processo de preparação de jogos — desde a extração até o envio ao console.
+O **X360 Auto GOD Tool** é uma ferramenta completa desenvolvida para usuários de **Xbox 360 com RGH/Exploit**, projetada para automatizar o processo de extração de arquivos, conversão de ISOs para o formato GOD e envio direto via FTP para o console.
 
-O projeto foi projetado para oferecer um fluxo inteligente, reduzir etapas manuais e evitar erros comuns durante a conversão e transferência de jogos.
+---
 
-🚀 Funcionalidades
-🔎 Detecção Inteligente de Conteúdo
+## 🚀 **Principais Funcionalidades**
 
-O sistema analisa automaticamente a pasta do programa e identifica:
+* **Detecção automática de arquivos**: Localiza arquivos `.zip` ou `.rar` contendo jogos de Xbox 360.
+* **Extração de arquivos**: Extrai o conteúdo e localiza automaticamente o arquivo `.ISO`.
+* **Conversão ISO → GOD**: Converte ISO para o formato **GOD**, exibindo **progresso em tempo real**.
+* **Verificação de FTP**: Confere automaticamente as configurações no `config.ini` antes do envio.
+* **Validação de rede**: Testa se o console está ativo na rede antes de enviar arquivos, evitando tentativas inúteis.
+* **Reenvio simplificado**: Permite reenviar jogos já convertidos sem precisar extrair ou converter novamente.
+* **Interface intuitiva**: Linha de comando simples com mensagens claras de status e erros.
 
-Arquivos .zip
+---
 
-Arquivos .iso
+## ✅ **Benefícios**
 
-Jogos já convertidos no formato GOD
+* **Economia de tempo**: Reduz drasticamente o tempo de preparação e envio de jogos.
+* **Evita erros comuns**: Impede problemas de IP incorreto ou credenciais FTP inválidas.
+* **Organização da biblioteca GOD**: Mantém os arquivos prontos para envio sem passos manuais repetitivos.
+* **Automação segura**: Minimiza o risco de envios falhos.
 
-Jogos no formato GOD dentro de temp/GOD
+---
 
-Jogos no formato XEX dentro de temp/XEX
+## 🖥️ **Requisitos**
 
-Conteúdos já prontos para envio direto
+* **Sistema operacional**: Windows 10 ou superior.
 
-O fluxo é totalmente automático: o programa decide se precisa extrair, converter ou apenas enviar.
+### **Ferramentas necessárias (versões portáteis recomendadas):**
 
-⚠️ O suporte a arquivos .rar foi removido devido à incompatibilidade com a versão portátil do 7za.exe.
+* **7za.exe (7-Zip 19.00 portátil)** – Extração de arquivos `.zip` / `.rar`
+  👉 [Download 7-Zip](https://www.7-zip.org/download.html)
 
-📦 Extração Otimizada
+* **iso2god.exe (versão portátil)** – Conversão de ISOs para GOD
+  👉 [GitHub iso2god](https://github.com/iliazeus/iso2god-rs)
 
-Utiliza 7za.exe v26.0
+* **WinSCP.com e WinSCP.exe (versão portátil)** – Envio via FTP
+  👉 [WinSCP Downloads](https://winscp.net/eng/downloads.php#additional)
 
-Progresso de extração aprimorado
+---
 
-Melhor tratamento de erros
+## ⚙️ **Como Usar**
 
-Estrutura organizada automaticamente na pasta temp
+1. **Configuração inicial**: Edite o arquivo `config.ini` com:
 
-💿 Conversão ISO → GOD
+   * **IP do console**
+   * **Usuário FTP**
+   * **Senha FTP**
+   * **Diretório de destino**
 
-Conversão automatizada via iso2god
+2. **Adição de jogos**: Coloque os arquivos `.zip` ou `.rar` no diretório do programa
+   *(Opcional caso já possua arquivos GOD prontos em `temp/GOD`)*
 
-Progresso exibido em tempo real
+3. **Execução**: Rode o programa e siga as instruções exibidas no terminal.
 
-Validação automática após conversão
+---
 
-Evita reconversões desnecessárias
+## 🔒 **Aviso Legal**
 
-📂 Extração ISO → XEX
+**O X360 Auto GOD Tool é destinado apenas ao uso com seus próprios dumps de jogos.**
+Não apoiamos nem incentivamos a pirataria, distribuição de jogos protegidos por direitos autorais ou qualquer uso ilegal.
+**Use o software com responsabilidade e respeite a legislação vigente.**
 
-Agora o projeto inclui suporte completo para extração em formato XEX utilizando:
+---
 
-X360AutoXex.exe
+## 💖 **Apoie o Projeto**
 
-extract-xiso.exe
+Se você deseja apoiar o desenvolvimento contínuo do X360 Auto GOD Tool, pode contribuir via **Pix**:
 
-Permite:
-
-Extração alternativa ao formato GOD
-
-Preparação de jogos no formato XEX
-
-Maior flexibilidade dependendo da necessidade do usuário
-
-🌐 Sistema de Envio via FTP (Opcional)
-
-O envio automático utiliza:
-
-WinSCP.com
-
-WinSCP.exe
-
-Recursos:
-
-Leitura automática do novo modelo de config.ini
-
-Verificação de IP e credenciais
-
-Teste de conectividade antes do envio
-
-Reenvio rápido de jogos já processados
-
-⚠️ O console não precisa estar conectado durante a conversão.
-A conexão é necessária apenas se o usuário optar pelo envio via FTP.
-
-♻️ Processamento Inteligente
-
-Detecta arquivos já convertidos
-
-Evita retrabalho
-
-Permite envio posterior
-
-Permite uso totalmente offline
-
-🖥️ Requisitos
-
-Windows 10 ou superior
-
-Xbox 360 com RGH/Exploit (apenas para execução dos jogos no console)
-
-🔌 Conectividade (Opcional)
-
-O programa pode funcionar completamente offline para:
-
-Extração
-
-Conversão
-
-Preparação da estrutura
-
-Os arquivos gerados podem ser transferidos posteriormente via:
-
-Pendrive
-
-HD externo
-
-Transferência manual pelo próprio console
-
-FTP (opcional)
-
-📁 Executáveis Utilizados
-
-O projeto integra os seguintes componentes:
-
-7za.exe (v26.0)
-
-iso2god.exe
-
-extract-xiso.exe
-
-X360AutoXex.exe
-
-WinSCP.com
-
-WinSCP.exe
-
-⚙️ Como Usar
-1️⃣ Configuração Inicial
-
-Edite o arquivo config.ini e configure:
-
-IP do console
-
-Usuário FTP
-
-Senha FTP
-
-Diretório de destino
-
-(Apenas necessário caso deseje utilizar envio automático via FTP)
-
-2️⃣ Adicionar Jogos
-
-Coloque na pasta do programa:
-
-.zip
-
-.iso
-
-Conteúdos GOD
-
-Conteúdos XEX
-
-3️⃣ Executar
-
-Execute o programa principal.
-
-O sistema automaticamente irá:
-
-Extrair (se necessário)
-
-Converter (se necessário)
-
-Preparar estrutura
-
-Enviar (caso configurado)
-
-🔒 Aviso Legal
-
-O X360 Auto GOD Tool destina-se exclusivamente ao uso com backups legítimos de jogos que você possua.
-
-O projeto não apoia, incentiva ou promove:
-
-Pirataria
-
-Distribuição ilegal de conteúdo
-
-Violação de direitos autorais
-
-Use com responsabilidade e de acordo com a legislação vigente em seu país.
-
-💖 Apoie o Projeto
-
-Se você deseja apoiar o desenvolvimento contínuo do projeto:
-
-Chave Pix:
-838ef691-cfae-41ec-9b98-8fbb3d0e47a4
+**Chave Pix:** `838ef691-cfae-41ec-9b98-8fbb3d0e47a4`
