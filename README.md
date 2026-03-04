@@ -1,73 +1,127 @@
-# 🎮 **X360 Auto GOD Tool**
+# 🎮 X360 AUTO TOOL SUITE
 
-O **X360 Auto GOD Tool** é uma ferramenta completa desenvolvida para usuários de **Xbox 360 com RGH/Exploit**, projetada para automatizar o processo de extração de arquivos, conversão de ISOs para o formato GOD e envio direto via FTP para o console.
+### Automação Inteligente para Xbox 360 RGH / Exploit
 
----
+O **X360 Auto Tool Suite** é um conjunto de ferramentas desenvolvidas por **Eduardo Henrique (Edu Dicas e Gameplay)** para automatizar completamente o preparo e envio de jogos para Xbox 360 desbloqueado (RGH/JTAG/Exploit).
 
-## 🚀 **Principais Funcionalidades**
-
-* **Detecção automática de arquivos**: Localiza arquivos `.zip` ou `.rar` contendo jogos de Xbox 360.
-* **Extração de arquivos**: Extrai o conteúdo e localiza automaticamente o arquivo `.ISO`.
-* **Conversão ISO → GOD**: Converte ISO para o formato **GOD**, exibindo **progresso em tempo real**.
-* **Verificação de FTP**: Confere automaticamente as configurações no `config.ini` antes do envio.
-* **Validação de rede**: Testa se o console está ativo na rede antes de enviar arquivos, evitando tentativas inúteis.
-* **Reenvio simplificado**: Permite reenviar jogos já convertidos sem precisar extrair ou converter novamente.
-* **Interface intuitiva**: Linha de comando simples com mensagens claras de status e erros.
+O projeto é dividido em dois módulos independentes que trabalham juntos:
 
 ---
 
-## ✅ **Benefícios**
+# 🔷 1️⃣ X360 Auto GOD Tool
 
-* **Economia de tempo**: Reduz drasticamente o tempo de preparação e envio de jogos.
-* **Evita erros comuns**: Impede problemas de IP incorreto ou credenciais FTP inválidas.
-* **Organização da biblioteca GOD**: Mantém os arquivos prontos para envio sem passos manuais repetitivos.
-* **Automação segura**: Minimiza o risco de envios falhos.
+Automatiza o processo completo de:
 
----
+📦 Arquivo compactado → 🎮 ISO → 💿 GOD → 🌐 FTP ou 💾 Offline
 
-## 🖥️ **Requisitos**
+## 🔥 Funcionalidades
 
-* **Sistema operacional**: Windows 10 ou superior.
+* Detecção automática de `.zip`, `.rar`, `.7z`, `.iso`
+* Extração automática via 7-Zip
+* Conversão ISO → GOD via iso2god
+* Monitoramento de progresso real
+* Modo FILA automático
+* Watch Folder com processamento sequencial
+* Validação de estrutura GOD:
 
-### **Ferramentas necessárias (versões portáteis recomendadas):**
+  * 00007000
+  * 000B0000
+  * 00000002
+* Verificação de TitleID no console (evita duplicados)
+* Envio automático de pasta Cache (Title Update)
+* Modo FTP inteligente
+* Modo OFFLINE (cópia para HD externo)
+* Teste automático de conexão com console
 
-* **7za.exe (7-Zip 19.00 portátil)** – Extração de arquivos `.zip` / `.rar`
-  👉 [Download 7-Zip](https://www.7-zip.org/download.html)
-
-* **iso2god.exe (versão portátil)** – Conversão de ISOs para GOD
-  👉 [GitHub iso2god](https://github.com/iliazeus/iso2god-rs)
-
-* **WinSCP.com e WinSCP.exe (versão portátil)** – Envio via FTP
-  👉 [WinSCP Downloads](https://winscp.net/eng/downloads.php#additional)
-
----
-
-## ⚙️ **Como Usar**
-
-1. **Configuração inicial**: Edite o arquivo `config.ini` com:
-
-   * **IP do console**
-   * **Usuário FTP**
-   * **Senha FTP**
-   * **Diretório de destino**
-
-2. **Adição de jogos**: Coloque os arquivos `.zip` ou `.rar` no diretório do programa
-   *(Opcional caso já possua arquivos GOD prontos em `temp/GOD`)*
-
-3. **Execução**: Rode o programa e siga as instruções exibidas no terminal.
+Ideal para quem usa formato **Content\0000000000000000**.
 
 ---
 
-## 🔒 **Aviso Legal**
+# 🔷 2️⃣ X360 Auto XEX Tool
 
-**O X360 Auto GOD Tool é destinado apenas ao uso com seus próprios dumps de jogos.**
-Não apoiamos nem incentivamos a pirataria, distribuição de jogos protegidos por direitos autorais ou qualquer uso ilegal.
-**Use o software com responsabilidade e respeite a legislação vigente.**
+Automatiza:
+
+🎮 ISO → 📂 XEX
+🎮 ISO Clássico → 📂 XBE
+
+## 🔥 Funcionalidades
+
+* Extração automática via extract-xiso
+* Detecção automática de jogo:
+
+  * Xbox 360 (.xex)
+  * Xbox Clássico (.xbe)
+* Separação automática:
+
+  * temp/XEX
+  * temp/XBE
+* Sanitização automática do nome do jogo
+* Modo FILA unificada
+* Watch Folder com fila sequencial
+* Proteção contra envio duplicado
+* Upload separado para:
+
+  * DEST_XEX
+  * DEST_XBE
+* Modo OFFLINE (DEST_OFF)
+* Validação inteligente de config.ini
+* Teste automático de conexão FTP
+* Proteção contra divisão por zero
+* Mensagens claras e status detalhado
+
+Ideal para quem prefere rodar jogos em formato **pasta extraída**.
 
 ---
 
-## 💖 **Apoie o Projeto**
+# ⚙️ Modos Disponíveis
 
-Se você deseja apoiar o desenvolvimento contínuo do X360 Auto GOD Tool, pode contribuir via **Pix**:
+| Modo         | Descrição                                |
+| ------------ | ---------------------------------------- |
+| FTP          | Envia direto para o console              |
+| OFFLINE      | Copia para HD externo                    |
+| FILA         | Processa múltiplos jogos automaticamente |
+| WATCH FOLDER | Monitora pasta e processa sozinho        |
+| CACHE AUTO   | Envia Title Update automaticamente       |
 
-**Chave Pix:** `838ef691-cfae-41ec-9b98-8fbb3d0e47a4`
+---
+
+# 🖥️ Requisitos
+
+* Windows 10 ou superior
+
+### Ferramentas externas necessárias:
+
+* 7za.exe (7-Zip portátil)
+* iso2god.exe
+* extract-xiso.exe
+* WinSCP.com
+
+---
+
+# 🔒 Aviso Legal
+
+O projeto é destinado exclusivamente para uso com **seus próprios dumps de jogos**.
+
+Não apoiamos:
+
+* Pirataria
+* Distribuição de jogos protegidos
+* Uso ilegal de conteúdo
+
+Use com responsabilidade.
+
+---
+
+# 💖 Apoie o Projeto
+
+Se deseja apoiar o desenvolvimento contínuo:
+
+Chave Pix:
+`838ef691-cfae-41ec-9b98-8fbb3d0e47a4`
+
+---
+
+# 🧠 Desenvolvido por
+
+Eduardo Henrique
+Canal: Edu Dicas e Gameplay
