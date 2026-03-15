@@ -1,10 +1,3 @@
-Entendi o estilo que você quer 👍
-Seu README atual é bom, mas dá para **enxugar bastante sem perder o profissionalismo** e **sem revelar muita coisa técnica**.
-
-Vou te devolver uma **versão otimizada baseada no seu**, mantendo seu estilo e emojis, mas **mais curta e segura**.
-
----
-
 # 🎮 X360 AUTO TOOL SUITE
 
 **Automação para Xbox 360 RGH / JTAG / Exploit**
