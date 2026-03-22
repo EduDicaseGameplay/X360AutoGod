@@ -51,20 +51,28 @@ Ferramentas necessárias na pasta `tools`:
 ## 📝 Configuração (`config.ini`)
 
 ```ini
-# FTP
-ip=192.168.0.100
-user=usuario
-password=senha123
-DEST_XEX=/Xbox360/XEX
-DEST_XBE=/Xbox360/XBE
+# ==============================
+# CONFIGURAÇÃO FTP - XBOX 360
+# ==============================
 
-# Offline
-OFFLINE=false
-DEST_OFF=C:\Xbox360\Backup
+ftp=true
+ip=192.168.1.15
+user=xboxftp
+password=xboxftp
 
-# Watch Folder
+DEST=/Hdd1/Content/0000000000000000/
+DEST_XEX=/Hdd1/MeusXEX/
+DEST_XBE=/Hdd1/MeusClassicos/
+DEST_TU_CACHE=/Hdd1/Cache/
+DEST_OFF=E:/JogosXbox360/
+
+# ==============================
+# CONFIGURAÇÃO DO WATCH FOLDER
+# ==============================
+# Defina como true para ativar o modo Watch Folder
+# Defina como false para usar o modo normal (processamento manual)
 WATCH_FOLDER=true
-WATCH_FOLDER_PATH=Watch
+WATCH_FOLDER_PATH=WatchFolder
 ```
 
 ---
