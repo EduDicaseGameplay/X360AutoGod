@@ -1,93 +1,112 @@
-# 🎮 X360 AUTO TOOL SUITE
+# 🎮 X360 Auto Tool (XEX & GOD)
 
-**Automação para Xbox 360 RGH / JTAG / Exploit**
+Ferramenta automatizada para processamento de jogos de Xbox 360 em formatos **ISO, XEX e GOD**, com envio via **FTP** ou cópia offline e dashboard em tempo real.
 
-O **X360 Auto Tool Suite** é um conjunto de ferramentas desenvolvido por **Eduardo Henrique (Edu Dicas e Gameplay)** para automatizar o preparo e envio de jogos para Xbox 360 desbloqueado.
+Projetos incluídos:
 
-O projeto possui dois módulos principais.
-
----
-
-# 🔷 X360 Auto GOD Tool
-
-Ferramenta para automatizar jogos no formato **GOD (Games on Demand)**.
-
-### Recursos
-
-* Suporte a arquivos `.iso`, `.zip`, `.rar`, `.7z`
-* Conversão automática **ISO → GOD**
-* Sistema de **fila automática**
-* **Watch Folder** para processamento automático
-* Envio via **FTP** ou **modo Offline**
-* Verificação básica para evitar duplicações
+* `X360AutoXex.exe` → Conversão e envio em formato **XEX/XBE**
+* `X360AutoGod.exe` → Conversão e envio em formato **GOD**
 
 ---
 
-# 🔷 X360 Auto XEX Tool
+## 🔹 Funcionalidades
 
-Ferramenta para gerenciamento de jogos em formato **XEX / XBE**.
+* Processamento automático de:
 
-### Recursos
-
-* Extração automática de jogos
-* Detecção de **Xbox 360 (XEX)** e **Xbox Clássico (XBE)**
-* Organização automática dos jogos
-* Sistema de **fila automática**
-* **Watch Folder**
-* Envio via **FTP** ou **modo Offline**
-
----
-
-# ⚙️ Modos de Uso
-
-| Modo         | Descrição                                    |
-| ------------ | -------------------------------------------- |
-| FTP          | Envia os jogos diretamente para o console    |
-| OFFLINE      | Copia os jogos para armazenamento local      |
-| FILA         | Processa múltiplos jogos automaticamente     |
-| WATCH FOLDER | Monitora uma pasta e processa novos arquivos |
+  * ISOs
+  * XEX / XBE
+  * GOD (Games on Demand)
+* Suporte a arquivos compactados (`.zip`, `.7z`, `.rar`, `.tar`, `.gz`, `.bz2`, `.xz`)
+* **Watch Folder** (monitoramento automático)
+* Fila de processamento com controle de duplicação
+* Envio via **FTP** ou modo **offline**
+* Dashboard Web em tempo real (progresso por arquivo)
+* Histórico de atividades
+* Acesso remoto via **ngrok** (opcional)
+* Controle remoto com opção de desligar o PC
 
 ---
 
-# 🖥️ Requisitos
+## ⚙️ Pré-requisitos
 
-Windows 10 ou superior
+* Windows 10 ou superior
+* .NET 6+ Runtime
 
-Ferramentas externas necessárias:
+Ferramentas necessárias na pasta `tools`:
 
-* `7za.exe`
-* `iso2god.exe`
-* `extract-xiso.exe`
-* `WinSCP.com`
+* `7za.exe` → Extração de arquivos
 
----
+* `extract-xiso.exe` → ISO → XEX
 
-# 🔒 Aviso Legal
+* `iso2god.exe` → ISO → GOD
 
-Este projeto destina-se ao uso com **backups pessoais de jogos**.
+* `WinSCP.com` → Envio via FTP
 
-Não apoiamos:
+* `ngrok.exe` → Acesso remoto (opcional)
 
-* Pirataria
-* Distribuição ilegal de conteúdo protegido
-
-Use com responsabilidade.
+* Arquivo `config.ini` configurado
 
 ---
 
-# 💖 Apoie o Projeto
+## 📝 Configuração (`config.ini`)
 
-Se este projeto te ajudou e você deseja apoiar o desenvolvimento:
+```ini
+# FTP
+ip=192.168.0.100
+user=usuario
+password=senha123
+DEST_XEX=/Xbox360/XEX
+DEST_XBE=/Xbox360/XBE
 
-**PIX**
+# Offline
+OFFLINE=false
+DEST_OFF=C:\Xbox360\Backup
 
-```
-838ef691-cfae-41ec-9b98-8fbb3d0e47a4
+# Watch Folder
+WATCH_FOLDER=true
+WATCH_FOLDER_PATH=Watch
 ```
 
 ---
 
-# 🧠 Desenvolvido por
+## 🚀 Uso
 
-**Eduardo Henrique**
-Canal: **Edu Dicas e Gameplay**
+1. Coloque arquivos ou pastas na **pasta base** ou **Watch Folder**
+2. Execute conforme o formato desejado:
+
+```bash
+X360AutoXex.exe
+```
+
+ou
+
+```bash
+X360AutoGod.exe
+```
+
+3. Acesse o dashboard:
+
+```
+http://localhost:5000
+```
+
+4. (Opcional) Configure o ngrok para acesso remoto
+5. Acompanhe o progresso em tempo real pelo navegador
+
+---
+
+## 🔧 Observações
+
+* Processamento em **fila (1 por vez)** para evitar conflitos
+* Detecção automática de arquivos completos antes do processamento
+* Limpeza automática de arquivos temporários
+* Suporte a múltiplos formatos no mesmo fluxo
+* Dashboard com atualização em tempo real via WebSocket
+
+---
+
+## 📌 Notas
+
+* O comportamento é totalmente automatizado após a configuração
+* Ideal para uso contínuo com Watch Folder ativo
+* Pode ser utilizado tanto localmente quanto em ambiente remoto
