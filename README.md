@@ -1,50 +1,53 @@
-# 🎮 X360 Auto Tool (XEX & GOD)
+## 🎮 X360AutoGod e X360AutoXex
 
-Ferramenta automatizada para processamento de jogos de Xbox 360 em formatos **ISO, XEX e GOD**, com envio via **FTP** ou cópia offline e dashboard em tempo real.
+Ferramenta automatizada para processamento de jogos de Xbox 360 nos formatos **ISO, XEX e GOD**, com suporte a envio via **FTP**, cópia offline e **dashboard em tempo real via navegador**.
 
-Projetos incluídos:
+### 📦 Projetos incluídos
 
 * `X360AutoXex.exe` → Conversão e envio em formato **XEX/XBE**
-* `X360AutoGod.exe` → Conversão e envio em formato **GOD**
+* `X360AutoGod.exe` → Conversão e envio em formato **GOD (Games on Demand)**
 
 ---
 
-## 🔹 Funcionalidades
+## 🚀 Funcionalidades
 
-* Processamento automático de:
+* ✔ Processamento automático de:
 
   * ISOs
-  * XEX / XBE
+  * Jogos extraídos (XEX / XBE)
   * GOD (Games on Demand)
-* Suporte a arquivos compactados (`.zip`, `.7z`, `.rar`, `.tar`, `.gz`, `.bz2`, `.xz`)
-* **Watch Folder** (monitoramento automático)
-* Fila de processamento com controle de duplicação
-* Envio via **FTP** ou modo **offline**
-* Dashboard Web em tempo real (progresso por arquivo)
-* Histórico de atividades
-* Acesso remoto via **ngrok** (opcional)
-* Controle remoto com opção de desligar o PC
+
+* ✔ Suporte a arquivos compactados:
+  `.zip`, `.7z`, `.rar`, `.tar`, `.gz`, `.bz2`, `.xz`
+
+* ✔ **Watch Folder (modo automático)**
+
+* ✔ Fila inteligente (evita duplicação e conflitos)
+
+* ✔ Envio via **FTP** ou cópia **offline**
+
+* ✔ **Dashboard Web em tempo real (WebSocket)**
+
+* ✔ Histórico de processamento
+
+* ✔ Acesso remoto via **ngrok**
+
+* ✔ Botão para desligamento remoto do PC
 
 ---
 
 ## ⚙️ Pré-requisitos
 
 * Windows 10 ou superior
-* .NET 6+ Runtime
+* .NET 6 ou superior
 
-Ferramentas necessárias na pasta `tools`:
+### 📁 Pasta `tools` obrigatória:
 
 * `7za.exe` → Extração de arquivos
-
-* `extract-xiso.exe` → ISO → XEX
-
-* `iso2god.exe` → ISO → GOD
-
+* `extract-xiso.exe` → Conversão ISO → XEX
+* `iso2god.exe` → Conversão ISO → GOD
 * `WinSCP.com` → Envio via FTP
-
 * `ngrok.exe` → Acesso remoto (opcional)
-
-* Arquivo `config.ini` configurado
 
 ---
 
@@ -67,20 +70,23 @@ DEST_TU_CACHE=/Hdd1/Cache/
 DEST_OFF=E:/JogosXbox360/
 
 # ==============================
-# CONFIGURAÇÃO DO WATCH FOLDER
+# WATCH FOLDER
 # ==============================
-# Defina como true para ativar o modo Watch Folder
-# Defina como false para usar o modo normal (processamento manual)
+
 WATCH_FOLDER=true
 WATCH_FOLDER_PATH=WatchFolder
 ```
 
 ---
 
-## 🚀 Uso
+## ▶️ Como usar
 
-1. Coloque arquivos ou pastas na **pasta base** ou **Watch Folder**
-2. Execute conforme o formato desejado:
+1. Coloque os arquivos (ISO, jogos ou compactados) na:
+
+   * Pasta do programa **ou**
+   * Pasta configurada como Watch Folder
+
+2. Execute o programa desejado:
 
 ```bash
 X360AutoXex.exe
@@ -92,29 +98,46 @@ ou
 X360AutoGod.exe
 ```
 
-3. Acesse o dashboard:
+3. Acesse o dashboard no navegador:
 
 ```
 http://localhost:5000
 ```
 
-4. (Opcional) Configure o ngrok para acesso remoto
-5. Acompanhe o progresso em tempo real pelo navegador
+4. acesso remoto com ngrok
+
+```
+primeiro acesso precisa fazer cadastro (mas sera direcionado diretamente para isso ai pode logar com conta google)
+```
 
 ---
 
-## 🔧 Observações
+## 🌐 Dashboard
+
+O sistema possui um painel web com:
+
+* Progresso em tempo real por arquivo
+* Status de cada etapa (extração, conversão, envio)
+* Atualização automática via WebSocket
+* Botão para desligamento remoto do PC
+
+---
+
+## ⚠️ Observações importantes
 
 * Processamento em **fila (1 por vez)** para evitar conflitos
-* Detecção automática de arquivos completos antes do processamento
+* Detecção automática de arquivos antes do processamento
 * Limpeza automática de arquivos temporários
 * Suporte a múltiplos formatos no mesmo fluxo
-* Dashboard com atualização em tempo real via WebSocket
+* Dashboard com atualização em tempo real
+* **Sistema aprimorado para maior compatibilidade com diferentes hardwares e ambientes de uso**
+* **Ajustes internos focados em estabilidade e adaptação a diversas situações do dia a dia**
+* **Melhor comportamento em cenários variados, garantindo mais consistência durante o uso contínuo**
 
 ---
 
-## 📌 Notas
+## 📌 Notas finais
 
-* O comportamento é totalmente automatizado após a configuração
-* Ideal para uso contínuo com Watch Folder ativo
-* Pode ser utilizado tanto localmente quanto em ambiente remoto
+* Após configurado, o sistema funciona de forma **totalmente automática**
+* Ideal para servidores, setups dedicados ou uso contínuo
+* Pode ser acessado localmente ou remotamente
