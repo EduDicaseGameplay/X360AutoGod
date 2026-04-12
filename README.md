@@ -1,8 +1,26 @@
-## 🎮 X360AutoGod e X360AutoXex
+# 🎮 X360AutoGod e X360AutoXex
 
 Ferramenta automatizada para processamento de jogos de Xbox 360 nos formatos **ISO, XEX e GOD**, com suporte a envio via **FTP**, cópia offline e **dashboard em tempo real via navegador**.
 
-### 📦 Projetos incluídos
+---
+
+## 📸 Interface
+
+<p align="center">
+  <img src="assets/screenshot1.png" width="800"/>
+</p>
+
+<p align="center">
+  <img src="assets/screenshot2.png" width="800"/>
+</p>
+
+<p align="center">
+  <img src="assets/screenshot3.png" width="800"/>
+</p>
+
+---
+
+## 📦 Projetos incluídos
 
 * `X360AutoXex.exe` → Conversão e envio em formato **XEX/XBE**
 * `X360AutoGod.exe` → Conversão e envio em formato **GOD (Games on Demand)**
@@ -81,12 +99,8 @@ WATCH_FOLDER_PATH=WatchFolder
 
 ## ▶️ Como usar
 
-1. Coloque os arquivos (ISO, jogos ou compactados) na:
-
-   * Pasta do programa **ou**
-   * Pasta configurada como Watch Folder
-
-2. Execute o programa desejado:
+1. Coloque os arquivos na pasta do programa ou Watch Folder
+2. Execute:
 
 ```bash
 X360AutoXex.exe
@@ -98,46 +112,34 @@ ou
 X360AutoGod.exe
 ```
 
-3. Acesse o dashboard no navegador:
+3. Acompanhe pelo CMD ou dashboard:
 
 ```
 http://localhost:5000
-```
-
-4. acesso remoto com ngrok
-
-```
-primeiro acesso precisa fazer cadastro (mas sera direcionado diretamente para isso ai pode logar com conta google)
 ```
 
 ---
 
 ## 🌐 Dashboard
 
-O sistema possui um painel web com:
-
-* Progresso em tempo real por arquivo
-* Status de cada etapa (extração, conversão, envio)
+* Progresso em tempo real
+* Status de cada etapa
 * Atualização automática via WebSocket
-* Botão para desligamento remoto do PC
+* Controle remoto do sistema
 
 ---
 
-## ⚠️ Observações importantes
+## ⚠️ Observações
 
-* Processamento em **fila (1 por vez)** para evitar conflitos
-* Detecção automática de arquivos antes do processamento
+* Processamento em **fila (1 por vez)**
 * Limpeza automática de arquivos temporários
-* Suporte a múltiplos formatos no mesmo fluxo
-* Dashboard com atualização em tempo real
-* **Sistema aprimorado para maior compatibilidade com diferentes hardwares e ambientes de uso**
-* **Ajustes internos focados em estabilidade e adaptação a diversas situações do dia a dia**
-* **Melhor comportamento em cenários variados, garantindo mais consistência durante o uso contínuo**
+* Suporte a múltiplos formatos
+* Sistema otimizado para uso contínuo
 
 ---
 
 ## 📌 Notas finais
 
-* Após configurado, o sistema funciona de forma **totalmente automática**
-* Ideal para servidores, setups dedicados ou uso contínuo
+* Funciona de forma **totalmente automática após configuração**
+* Ideal para servidores ou uso contínuo
 * Pode ser acessado localmente ou remotamente
