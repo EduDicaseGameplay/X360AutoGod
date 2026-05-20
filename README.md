@@ -1,6 +1,6 @@
 # 🎮 X360AutoGod e X360AutoXex
 
-Ferramenta automatizada para processamento de jogos de Xbox 360 nos formatos **ISO, XEX e GOD**, com suporte a envio via **FTP**, cópia offline e **dashboard em tempo real via navegador**.
+Ferramenta automatizada para processamento de jogos de Xbox 360 nos formatos **ISO, XEX, XBE e GOD**, com suporte a **MULTIDISK inteligente**, envio via **FTP**, cópia offline e **dashboard em tempo real via navegador**.
 
 ---
 
@@ -33,20 +33,33 @@ Ferramenta automatizada para processamento de jogos de Xbox 360 nos formatos **I
 
   * ISOs
   * Jogos extraídos (XEX / XBE)
-  * GOD (Games on Demand)
+  * Jogos GOD (Games on Demand)
 
 * ✔ Suporte a arquivos compactados:
+
   `.zip`, `.7z`, `.rar`, `.tar`, `.gz`, `.bz2`, `.xz`
 
-* ✔ **Watch Folder (modo automático)**
+* ✔ Suporte **MULTIDISK Inteligente**
 
-* ✔ Fila inteligente (evita duplicação e conflitos)
+  Detecta automaticamente:
+
+  * Disc 1 / Disc 2
+  * DVD1 / DVD2
+  * CD1 / CD2
+
+* ✔ **Watch Folder automática**
+
+* ✔ Sistema de fila inteligente
+
+  Evita duplicação e conflitos durante o processamento
 
 * ✔ Envio via **FTP** ou cópia **offline**
 
 * ✔ **Dashboard Web em tempo real (WebSocket)**
 
 * ✔ Histórico de processamento
+
+* ✔ Identificação automática de jogos via `games.json`
 
 * ✔ Acesso remoto via **ngrok**
 
@@ -59,22 +72,43 @@ Ferramenta automatizada para processamento de jogos de Xbox 360 nos formatos **I
 * Windows 10 ou superior
 * .NET 6 ou superior
 
-### 📁 Pasta `tools` obrigatória:
+### 📁 Pasta `tools` obrigatória
 
 * `7za.exe` → Extração de arquivos
 * `extract-xiso.exe` → Conversão ISO → XEX
 * `iso2god.exe` → Conversão ISO → GOD
 * `WinSCP.com` → Envio via FTP
-* `ngrok.exe` → Acesso remoto (opcional)
+* `ngrok.exe` → Dashboard remoto (opcional)
+
+---
+
+# 🎮 Banco de Dados de Jogos
+
+Suporte a identificação automática de jogos usando `games.json`.
+
+Exemplo:
+
+```json
+{
+  "4D5307FA": "Lost Odyssey",
+  "545408A7": "Halo Reach"
+}
+```
+
+Usado para:
+
+* Nome amigável dos jogos
+* Logs mais organizados
+* Melhor identificação no dashboard
 
 ---
 
 ## 📝 Configuração (`config.ini`)
 
 ```ini
-# ==============================
-# CONFIGURAÇÃO FTP - XBOX 360
-# ==============================
+# ==========================================
+# FTP
+# ==========================================
 
 ftp=true
 ip=192.168.1.15
@@ -85,21 +119,33 @@ DEST=/Hdd1/Content/0000000000000000/
 DEST_XEX=/Hdd1/MeusXEX/
 DEST_XBE=/Hdd1/MeusClassicos/
 DEST_TU_CACHE=/Hdd1/Cache/
+
+# ==========================================
+# MODO OFFLINE
+# ==========================================
+
 DEST_OFF=E:/JogosXbox360/
 
-# ==============================
+# ==========================================
 # WATCH FOLDER
-# ==============================
+# ==========================================
 
 WATCH_FOLDER=true
 WATCH_FOLDER_PATH=WatchFolder
+
+# ==========================================
+# MULTIDISK
+# ==========================================
+
+MULTIDISK=true
+MULTIDISK_FOLDER=Multidisk_GOD
 ```
 
 ---
 
 ## ▶️ Como usar
 
-1. Coloque os arquivos na pasta do programa ou Watch Folder
+1. Coloque os arquivos na pasta do programa ou na Watch Folder
 2. Execute:
 
 ```bash
@@ -112,9 +158,9 @@ ou
 X360AutoGod.exe
 ```
 
-3. Acompanhe pelo CMD ou dashboard:
+3. Acompanhe pelo CMD ou pelo dashboard:
 
-```
+```txt
 http://localhost:5000
 ```
 
@@ -122,24 +168,51 @@ http://localhost:5000
 
 ## 🌐 Dashboard
 
-* Progresso em tempo real
-* Status de cada etapa
-* Atualização automática via WebSocket
+O dashboard permite acompanhar tudo em tempo real:
+
+* Progresso de conversão
+* Extração de arquivos
+* Upload FTP
+* Status atual
+* Histórico de processamento
 * Controle remoto do sistema
 
 ---
 
 ## ⚠️ Observações
 
-* Processamento em **fila (1 por vez)**
+* Processamento em fila (**1 jogo por vez**)
 * Limpeza automática de arquivos temporários
-* Suporte a múltiplos formatos
 * Sistema otimizado para uso contínuo
+* Suporte a múltiplos formatos
+* Funcionamento totalmente automático após configuração
 
 ---
 
-## 📌 Notas finais
+# 🔥 Diferenciais
 
-* Funciona de forma **totalmente automática após configuração**
-* Ideal para servidores ou uso contínuo
-* Pode ser acessado localmente ou remotamente
+Diferente de ferramentas tradicionais da cena Xbox 360, o X360AutoGod/Xex automatiza praticamente todo o fluxo:
+
+* Extração
+* Conversão
+* Organização
+* Upload
+* Monitoramento
+* Limpeza automática
+* MULTIDISK
+* Dashboard remoto
+
+Tudo em um único sistema automatizado.
+
+---
+
+# 👨‍💻 Desenvolvido por
+
+**Eduardo Henrique**
+Canal: **Edu Dicas e Gameplay**
+
+---
+
+# 📜 Licença
+
+Projeto desenvolvido para preservação, automação e facilidade no gerenciamento de jogos de Xbox 360.
