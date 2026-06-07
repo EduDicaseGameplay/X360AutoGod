@@ -106,11 +106,11 @@ Usado para:
 ## 📝 Configuração (`config.ini`)
 
 ```ini
-# ==========================================
-# FTP
-# ==========================================
+# ==============================
+# CONFIGURAÇÃO FTP - XBOX 360
+# ==============================
 
-ftp=true
+ftp=false
 ip=192.168.1.15
 user=xboxftp
 password=xboxftp
@@ -119,26 +119,29 @@ DEST=/Hdd1/Content/0000000000000000/
 DEST_XEX=/Hdd1/MeusXEX/
 DEST_XBE=/Hdd1/MeusClassicos/
 DEST_TU_CACHE=/Hdd1/Cache/
-
-# ==========================================
-# MODO OFFLINE
-# ==========================================
-
 DEST_OFF=E:/JogosXbox360/
 
-# ==========================================
-# WATCH FOLDER
-# ==========================================
-
+# ==============================
+# CONFIGURAÇÃO DO WATCH FOLDER
+# ==============================
+# Defina como true para ativar o modo Watch Folder
+# Defina como false para usar o modo normal (processamento manual)
 WATCH_FOLDER=true
 WATCH_FOLDER_PATH=WatchFolder
 
-# ==========================================
+# ==============================
 # MULTIDISK
-# ==========================================
+# ==============================
 
 MULTIDISK=true
 MULTIDISK_FOLDER=Multidisk_GOD
+
+# ==============================
+# CONFIGURAÇÃO DO NGROK (NOVO!)
+# ==============================
+# Defina como false para usar apenas o dashboard local (http://localhost:5000)
+# Defina como true para ativar o ngrok e gerar o link de acesso remoto
+USE_NGROK=false
 ```
 
 ---
